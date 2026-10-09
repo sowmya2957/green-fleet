@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --aura-green: #4E8B37;
+  --aura-dark-green: #234A1F;
+  --aura-pink: #EE7480;
+  --aura-coral: #F08272;
+  --aura-peach: #F5B875;
+  --aura-yellow: #F5D565;
+  --aura-cream: #FAF7F2;
+  --aura-text: #1D3F1B;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #FAF7F2;
+    color: #1D3F1B;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F2EDE2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D8CFBE;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #BFAF98;
+}
+
+/* Typography Helpers */
+.text-display-hero {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2.75rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.text-display-section {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  line-height: 1.08;
+}
+
+/* Custom Card Container */
+.industrial-card {
+  background: #FFFFFF;
+  border: 1px solid #E6E0D5;
+  border-radius: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(29, 63, 27, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.industrial-card-hover:hover {
+  border-color: #4E8B37;
+  box-shadow: 0 12px 36px -4px rgba(78, 139, 55, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Print Styles for Report Export */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  header, nav, footer, .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+  .industrial-card {
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    break-inside: avoid;
+  }
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

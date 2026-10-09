@@ -1,0 +1,25 @@
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/.env.*
+
+# Backend
+backend/target/
+backend/.env
+backend/.env.*
+
+# Java / Maven build files
+green-fleet-backend/target/
+**/target/
+
+# Node.js
+frontend/node_modules/
+frontend/dist/
+
+# Environment files
+frontend/.env
+frontend/.env.*
+green-fleet-backend/.env
+green-fleet-backend/.env.*
